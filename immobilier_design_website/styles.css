@@ -1,0 +1,112 @@
+
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add a background color and some padding around the site */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Style the header */
+header {
+    background-color: #50b3a2;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header img {
+    max-width: 100px;
+}
+
+/* Style the navigation menu */
+nav ul {
+    background-color: #333;
+    overflow: hidden;
+    color: white;
+}
+
+nav ul li {
+    float: left;
+    display: inline;
+    padding: 14px 16px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Style the main content */
+main {
+    margin: 15px;
+    padding: 15px;
+    background-color: #fff;
+}
+
+/* Style the footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Add some smooth transitions */
+nav ul li {
+    transition: background-color 0.3s;
+}
+
+nav ul li:hover {
+    background-color: #555;
+}
+
+/* Add some box shadows for depth */
+header, main, footer {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add rounded corners */
+header, main, footer {
+    border-radius: 8px;
+}
+
+/* Add some spacing and centering */
+main {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Make the form fields look better */
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+    background-color: #50b3a2;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a097;
+}
