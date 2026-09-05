@@ -101,6 +101,7 @@ h3{font-stretch:110%;font-weight:500;letter-spacing:-.01em;line-height:1.15;font
 .phone:hover{border-color:var(--navy)}
 .contact-grid{margin-top:var(--s-l);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-m);padding-top:var(--s-m);border-top:1px solid var(--line)}
 .contact-grid p,.contact-grid address{max-width:24em}
+.contact-grid address .textlink{display:inline-block;margin-top:.6em}
 .contact-grid .textlink{display:inline-block;margin-top:.5em}
 
 /* ---- pied de page ---- */
