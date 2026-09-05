@@ -1,0 +1,152 @@
+/* Immobilier & Design — feuille de style unique */
+
+@font-face{font-family:"Archivo";font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url("../fonts/archivo-normal-latin.woff2") format("woff2")}
+@font-face{font-family:"Archivo";font-style:italic;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url("../fonts/archivo-italic-latin.woff2") format("woff2")}
+
+:root{
+  --navy:#28253e;
+  --navy-deep:#19172a;
+  --ink:#1e1d2a;
+  --ink-2:#5f5e6d;
+  --paper:#ffffff;
+  --plaster:#edece7;
+  --line:#d9d7cf;
+  --on-navy:#ffffff;
+  --on-navy-2:rgba(255,255,255,.74);
+  --line-navy:rgba(255,255,255,.28);
+  --font:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --max:1240px;
+  --gutter:clamp(20px,4.5vw,60px);
+  --s-xl:clamp(96px,12vw,176px);
+  --s-l:clamp(56px,7vw,104px);
+  --s-m:clamp(28px,3.5vw,48px);
+  --r:4px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:1.0625rem;line-height:1.55;font-weight:400;font-stretch:100%;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul,figure,address{margin:0}
+address{font-style:normal}
+ul{padding:0;list-style:none}
+:focus-visible{outline:2px solid currentColor;outline-offset:4px;border-radius:2px}
+
+.wrap{width:min(100% - 2*var(--gutter),var(--max));margin-inline:auto}
+
+/* ---- rôles typographiques ---- */
+h2{font-stretch:114%;font-weight:500;letter-spacing:-.02em;line-height:1.05;font-size:clamp(1.9rem,3.6vw,3rem);max-width:20ch}
+h3{font-stretch:110%;font-weight:500;letter-spacing:-.01em;line-height:1.15;font-size:1.375rem}
+.lead{font-size:clamp(1.125rem,1.5vw,1.3125rem);line-height:1.5}
+.muted{color:var(--ink-2)}
+
+/* ---- boutons et liens ---- */
+.btn{display:inline-flex;align-items:center;padding:.95em 1.5em;border-radius:var(--r);font-weight:500;text-decoration:none;line-height:1;border:1px solid transparent;transition:background-color .2s,color .2s,border-color .2s}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-light:hover{background:rgba(255,255,255,.86)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-deep)}
+.textlink{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.24em}
+.textlink:hover{text-decoration-thickness:2px}
+
+/* ---- barre de navigation (partagée) ---- */
+.nav{display:flex;align-items:center;gap:var(--s-m);padding-block:22px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;font-weight:500;font-stretch:108%;letter-spacing:-.01em;font-size:1.05rem;white-space:nowrap}
+.brand img{width:40px;height:auto}
+.nav-links{display:flex;gap:clamp(18px,2.5vw,36px);margin-inline-start:auto}
+.nav-links a{color:var(--on-navy-2);text-decoration:none;padding-block:.3em;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover{color:#fff;border-color:var(--line-navy)}
+.nav-phone{text-decoration:none;font-weight:500;font-variant-numeric:tabular-nums;padding:.55em .95em;border:1px solid var(--line-navy);border-radius:var(--r);white-space:nowrap;transition:border-color .2s}
+.nav-phone:hover{border-color:#fff}
+
+/* ---- héros ---- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:var(--on-navy);min-height:min(100vh,920px);min-height:min(100svh,920px);display:flex;flex-direction:column}
+.hero .wrap{display:flex;flex-direction:column;flex:1}
+.hero-body{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;justify-content:center;padding-block:var(--s-l) var(--s-xl)}
+.hero h1{font-stretch:118%;font-weight:500;letter-spacing:-.025em;line-height:.98;font-size:clamp(2.75rem,7.2vw,6.75rem);max-width:11ch}
+.hero .lead{margin-top:clamp(20px,2.5vw,32px);color:var(--on-navy-2);max-width:30em}
+.hero-actions{margin-top:clamp(28px,3.5vw,44px);display:flex;align-items:center;gap:clamp(18px,2.5vw,32px);flex-wrap:wrap}
+.hero-actions .textlink{color:var(--on-navy-2)}
+.hero-actions .textlink:hover{color:#fff}
+.roof{position:absolute;right:-8vw;bottom:-3px;width:min(66vw,1000px);height:auto;pointer-events:none;z-index:0}
+.roof path{fill:none;stroke:#fff;stroke-opacity:.5;stroke-width:2;stroke-linejoin:miter;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.8s cubic-bezier(.3,.6,.15,1) .25s forwards}
+.hero h1,.hero .lead,.hero-actions{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero .lead{animation-delay:.12s}
+.hero-actions{animation-delay:.22s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ---- sections ---- */
+.section{padding-block:var(--s-xl)}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-m);align-items:end;margin-bottom:var(--s-l)}
+.section-head p{max-width:30em;color:var(--ink-2);font-size:1.125rem}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+.services figure{aspect-ratio:4/5;overflow:hidden;border-radius:var(--r);position:relative;background:var(--plaster)}
+.services img{width:100%;height:100%;object-fit:cover;filter:saturate(.82)}
+.services figure::after,.wide::after{content:"";position:absolute;inset:0;background:var(--navy);opacity:.1;mix-blend-mode:multiply;pointer-events:none}
+.services h3{margin-top:22px}
+.services p{margin-top:10px;color:var(--ink-2);max-width:32em}
+
+.band{background:var(--plaster)}
+.about{display:grid;grid-template-columns:5fr 7fr;gap:var(--s-l)}
+.about-text{font-size:1.125rem;max-width:36em}
+.about-text p+p{margin-top:1.2em}
+.wide{margin-top:var(--s-l);aspect-ratio:21/9;overflow:hidden;border-radius:var(--r);position:relative;background:var(--line)}
+.wide img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:saturate(.8)}
+
+.contact h2{max-width:none}
+.phone{display:inline-block;margin-top:var(--s-m);font-stretch:118%;font-weight:500;letter-spacing:-.03em;line-height:1;font-size:clamp(2.6rem,11vw,7.5rem);text-decoration:none;font-variant-numeric:tabular-nums;color:var(--navy);border-bottom:3px solid transparent;transition:border-color .2s}
+.phone:hover{border-color:var(--navy)}
+.contact-grid{margin-top:var(--s-l);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-m);padding-top:var(--s-m);border-top:1px solid var(--line)}
+.contact-grid p,.contact-grid address{max-width:24em}
+.contact-grid .textlink{display:inline-block;margin-top:.5em}
+
+/* ---- pied de page ---- */
+.footer{background:var(--navy);color:var(--on-navy-2);padding-block:var(--s-l) 36px}
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:var(--s-m);flex-wrap:wrap}
+.footer .brand{color:#fff}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap}
+.footer-links a{color:var(--on-navy-2);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{margin-top:var(--s-m);padding-top:20px;border-top:1px solid var(--line-navy);font-size:.9rem;display:flex;justify-content:space-between;gap:12px 32px;flex-wrap:wrap}
+
+/* ---- pages secondaires (mentions légales, 404) ---- */
+.topbar{background:var(--navy);color:#fff}
+.topbar .nav-links a:hover{color:#fff}
+.page{padding-block:var(--s-l) var(--s-xl)}
+.page h1{font-stretch:114%;font-weight:500;letter-spacing:-.02em;line-height:1.05;font-size:clamp(2rem,4vw,3.25rem);max-width:20ch}
+.page h2{font-size:1.25rem;margin-top:var(--s-m);font-stretch:108%;max-width:none}
+.page p{margin-top:.6em;max-width:38em}
+.page .lead{margin-top:var(--s-m);color:var(--ink-2)}
+.page .btn{margin-top:var(--s-m)}
+
+/* ---- réactif ---- */
+@media (max-width:900px){
+  .services{gap:16px}
+  .services h3{font-size:1.2rem}
+  .about{grid-template-columns:1fr;gap:var(--s-m)}
+  .section-head{grid-template-columns:1fr;gap:16px;align-items:start}
+  .contact-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .services{grid-template-columns:1fr}
+  .services figure{aspect-ratio:4/3}
+  .contact-grid{grid-template-columns:1fr}
+  .nav{gap:14px 16px;padding-block:18px}
+  .brand{font-size:1rem;gap:10px}
+  .brand img{width:34px}
+  .nav-links{order:3;width:100%;margin-inline-start:0;gap:22px}
+  .nav-phone{margin-inline-start:auto;padding:.5em .8em;font-size:.95rem}
+  .roof{width:130vw;right:-40vw;bottom:-2px}
+  .roof path{stroke-width:6;stroke-opacity:.35}
+  .wide{aspect-ratio:4/3}
+  .footer-top{align-items:flex-start;flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .roof path{animation:none;stroke-dashoffset:0}
+  .hero h1,.hero .lead,.hero-actions{animation:none}
+  .btn,.nav-links a,.nav-phone,.phone,.footer-links a{transition:none}
+}
